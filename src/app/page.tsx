@@ -4,9 +4,10 @@ import { useState } from "react";
 
 export default function Home() {
   const [menuAberto, setMenuAberto] = useState(false);
+  const anoAtual = new Date().getFullYear();
 
   return (
-    <div className="relative min-h-screen text-slate-100">
+    <div className="relative flex min-h-screen flex-col text-slate-100">
       <div className="absolute inset-0 bg-[url('/foto-academia.jpg')] bg-cover bg-center grayscale" />
       <div className="absolute inset-0 bg-black/70" />
 
@@ -83,7 +84,7 @@ export default function Home() {
           )}
         </nav>
       </header>
-      <main className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-20 px-6 py-12 md:px-10 md:py-16">
+      <main className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col gap-20 px-6 py-12 md:px-10 md:py-16">
         <section className="grid items-start gap-10 rounded-3xl border border-emerald-300 bg-black/70 p-8 md:grid-cols-2 md:p-12">
           <div className="space-y-6">
             <h1 className="text-4xl font-black leading-tight tracking-tight md:text-6xl">
@@ -262,6 +263,32 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      <footer className="relative z-10 border-t border-emerald-300 bg-black/70">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-6 px-6 py-8 text-center md:px-10">
+          <div className="space-y-2">
+            <p className="text-lg font-extrabold tracking-tight">
+              Academia <span className="text-emerald-400">Motta</span>
+            </p>
+            <p className="mt-2 text-sm text-slate-100">
+              Evolução real com acompanhamento profissional e ambiente premium.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <p className="text-lg font-semibold text-emerald-300">Contato</p>
+            <ul className="mt-2 space-y-2 text-sm text-slate-100">
+              <li>(11) 99999-9999</li>
+              <li>contato@academiamotta.com.br</li>
+              <li>Seg a Sex, 06h às 22h</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-emerald-300 px-6 py-4 text-center text-xs text-slate-100 md:px-10">
+          © {anoAtual} Academia Motta. Todos os direitos reservados.
+        </div>
+      </footer>
     </div>
   );
 }
